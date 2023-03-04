@@ -11,7 +11,7 @@ if api_key == '':
     exit()
 
 # Define OpenAI API key 
-openai.api_key = ""
+openai.api_key = api_key
 
 # Set up the model and prompt
 c = input('1. gpt-3.5-turbo\n2. code-davinci-002\n')
