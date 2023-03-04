@@ -1,0 +1,1 @@
+你現在是一個python程式設計師, 用tkinter library寫一個python3程式, 裡面包含4 Button, 2 Label, 1 Combobox

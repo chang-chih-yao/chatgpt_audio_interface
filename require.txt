@@ -1,0 +1,15 @@
+python >= 3.7
+
+pip install:
+openai
+gtts
+pydub
+pyaudio
+wave
+audiotsm
+
+
+big files:
+ffmpeg.exe
+ffprobe.exe
+You can download here 'https://ffmpeg.org/download.html'
