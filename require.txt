@@ -10,6 +10,7 @@ audiotsm
 
 
 big files:
-ffmpeg.exe
-ffprobe.exe
+1. ffmpeg.exe
+2. ffprobe.exe
 You can download here 'https://ffmpeg.org/download.html'
+Put these two files in 'your GitHub path/chatgpt_audio_interface/'
