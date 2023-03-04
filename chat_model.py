@@ -1,6 +1,6 @@
 import openai
 from record_audio import Record_to_audio
-from text_to_voice import Text_to_voice
+from text_to_audio import Text_to_audio
 import tkinter as tk
 from threading import Thread
 
@@ -21,8 +21,8 @@ if c != '1' and c != '2':
 
 print()
 
-text_or_voice = input('1. text in text out\n2. text in voice out\n3. voice in text out\n4. voice in voice out\n')
-if text_or_voice != '1' and text_or_voice != '2' and text_or_voice != '3' and text_or_voice != '4':
+text_or_audio = input('1. text in text out\n2. text in audio out\n3. audio in text out\n4. audio in audio out\n')
+if text_or_audio != '1' and text_or_audio != '2' and text_or_audio != '3' and text_or_audio != '4':
     print('ERROR!! please input correct number!')
     exit()
 
@@ -30,7 +30,7 @@ if text_or_voice != '1' and text_or_voice != '2' and text_or_voice != '3' and te
 # code-davinci-002
 
 my_record = Record_to_audio()
-my_text_to_voice = Text_to_voice()
+my_text_to_audio = Text_to_audio()
 
 def button_trigger():
     global my_button
@@ -60,7 +60,7 @@ def my_thread():
             {"role": "system", "content": "You are a helpful assistant."},
         ]
         while True:
-            if text_or_voice == '1':
+            if text_or_audio == '1':
                 message = input("我: ")
                 if message != '':
                     messages.append(
@@ -76,7 +76,7 @@ def my_thread():
                 reply = chat_completion.choices[0].message.content
                 print(f"AI: {reply}\n")
                 messages.append({"role": "assistant", "content": reply})
-            elif text_or_voice == '4':
+            elif text_or_audio == '4':
                 # temp = input('press any key to start listen')
                 my_button['state'] = tk.NORMAL
                 f = my_record.start_recording()
@@ -100,7 +100,7 @@ def my_thread():
                     continue
                 reply = chat_completion.choices[0].message.content
                 print(f"AI: {reply}\n")
-                my_text_to_voice.play_voice(reply, speed_up=1.5)
+                my_text_to_audio.play(reply, speed_up=1.5)
                 messages.append({"role": "assistant", "content": reply})
     elif c == '2':
         model_engine = "code-davinci-002"

@@ -9,7 +9,7 @@ class Record_to_audio:
         self.channels = 2
         self.fs = 44100  # Record at 44100 samples per second
         self.seconds = 4
-        self.filename = "output.wav"
+        self.filename = 'audio_in.wav'
         self.star_flag = False
         self.stop_program = False
 
@@ -56,5 +56,5 @@ class Record_to_audio:
 
             print('Finished recording')
 
-            f = open("output.wav", "rb")
+            f = open(self.filename, "rb")
         return f
