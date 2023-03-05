@@ -1,5 +1,6 @@
 import openai
 from record_audio import Record_to_audio
+from audio_to_text import Audio_to_text
 from text_to_audio import Text_to_audio
 import tkinter as tk
 from threading import Thread
@@ -30,6 +31,7 @@ if text_or_audio != '1' and text_or_audio != '2' and text_or_audio != '3' and te
 # code-davinci-002
 
 my_record = Record_to_audio()
+my_audio_to_text = Audio_to_text()
 my_text_to_audio = Text_to_audio()
 
 def button_trigger():
@@ -83,11 +85,11 @@ def my_thread():
                 if my_record.stop_program == True:
                     break
                 my_button['state'] = tk.DISABLED
-                f = open(my_record.filename, "rb")
-                transcript = openai.Audio.transcribe("whisper-1", f, language='zh')
-                message = transcript['text']
+                # f = open(my_record.filename, "rb")
+                # transcript = openai.Audio.transcribe("whisper-1", f, language='zh')
+                # message = transcript['text']
+                message, conf = my_audio_to_text.start(from_mic=False)
                 print(f'我: {message}')
-                # message = input("我: ")
                 if message == 'stop' or message == '停止':
                     break
                 elif  message != '':
