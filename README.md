@@ -4,7 +4,7 @@ You can use chatgpt in 4 mode:  1. text in text out(origin),  2. text in audio o
 ## Feature
 Combine 3 model together:
 1. OpenAI ChatGPT model
-2. OpenAI Whispter model
+2. OpenAI Whispter model **(now changed to Google Speech model)**
 3. Google Text-To-Speech model
 
 ## Installation
