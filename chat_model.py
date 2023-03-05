@@ -79,10 +79,11 @@ def my_thread():
             elif text_or_audio == '4':
                 # temp = input('press any key to start listen')
                 my_button['state'] = tk.NORMAL
-                f = my_record.start_recording()
+                my_record.start_recording()
                 if my_record.stop_program == True:
                     break
                 my_button['state'] = tk.DISABLED
+                f = open(my_record.filename, "rb")
                 transcript = openai.Audio.transcribe("whisper-1", f, language='zh')
                 message = transcript['text']
                 print(f'我: {message}')

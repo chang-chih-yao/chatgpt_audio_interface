@@ -54,7 +54,7 @@ class Record_to_audio:
             wf.writeframes(b''.join(frames))
             wf.close()
 
-            print('Finished recording')
+            print('Finished recording, saved as ' + self.filename)
 
-            f = open(self.filename, "rb")
-        return f
+            # f = open(self.filename, "rb")
+        # return f
