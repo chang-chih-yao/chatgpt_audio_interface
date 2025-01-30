@@ -15,3 +15,6 @@ ffprobe.exe
 # output audio files
 *.mp3
 *.wav
+
+input/*
+pandoc*
