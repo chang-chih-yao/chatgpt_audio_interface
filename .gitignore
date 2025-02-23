@@ -16,5 +16,6 @@ ffprobe.exe
 *.mp3
 *.wav
 
-input/*
-pandoc*
+input_output/*
+data/lib*
+others/*
